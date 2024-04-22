@@ -164,19 +164,31 @@ var scrollVis = function () {
     g.select('.x.axis').style('opacity', 0);
 
     // count openvis title
-    g.append('text')
-      .attr('class', 'title openvis-title')
-      .attr('x', width / 2)
-      .attr('y', height / 3)
-      .text('2013');
+    // g.append('text')
+    //   .attr('class', 'title openvis-title')
+    //   .attr('x', width / 2)
+    //   .attr('y', height / 3)
+    //   .text('The Curtain Rises on March Madness');
 
-    g.append('text')
-      .attr('class', 'sub-title openvis-title')
-      .attr('x', width / 2)
-      .attr('y', (height / 3) + (height / 5))
-      .text('OpenVis Conf');
+    // g.append('text')
+    //   .attr('class', 'sub-title openvis-title')
+    //   .attr('x', width / 2)
+    //   .attr('y', (height / 3) + (height / 5))
+    //   .text('OpenVis Conf');
 
-    g.selectAll('.openvis-title')
+    g.append('image')
+    .attr('xlink:href', 'https://projects.fivethirtyeight.com/2017-march-madness-predictions/images/logos2.png')
+    .attr('class', 'openvis-logo')
+    .attr('x', width / 2 - 100) // Adjust x to position the image
+    .attr('y', height / 3 - 100) // Adjust y to position the image
+    .attr('width', 400) // Set the width of the image
+    .attr('height', 400); // Set the height of the image
+
+    g.selectAll('.image')
+    .attr('opacity', 0);
+
+
+    g.selectAll('.openvis-logo')
       .attr('opacity', 0);
 
     // count filler word count title
@@ -184,13 +196,13 @@ var scrollVis = function () {
       .attr('class', 'title count-title highlight')
       .attr('x', width / 2)
       .attr('y', height / 3)
-      .text('180');
+      .text('68');
 
     g.append('text')
       .attr('class', 'sub-title count-title')
       .attr('x', width / 2)
       .attr('y', (height / 3) + (height / 5))
-      .text('Filler Words');
+      .text('Teams');
 
     g.selectAll('.count-title')
       .attr('opacity', 0);
@@ -342,10 +354,12 @@ var scrollVis = function () {
       .duration(0)
       .attr('opacity', 0);
 
-    g.selectAll('.openvis-title')
+    g.selectAll('.openvis-logo')
       .transition()
       .duration(600)
       .attr('opacity', 1.0);
+
+    
   }
 
   /**
@@ -357,7 +371,7 @@ var scrollVis = function () {
    *
    */
   function showFillerTitle() {
-    g.selectAll('.openvis-title')
+    g.selectAll('.openvis-logo')
       .transition()
       .duration(0)
       .attr('opacity', 0);

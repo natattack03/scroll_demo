@@ -67,7 +67,7 @@
 }
 
 .highlight {
-  fill: #008080;
+  fill: 	#009CDE;
   font-weight: bold;
 }
 
@@ -76,5 +76,17 @@
   stroke-width: 4px;
 
 }
+
+.automatic-bid {
+  color: #009CDE;
+  font-weight: bold;
+
+}
+
+.at-large-bid {
+  color: #009CDE;
+  font-weight: bold;
+}
+
 
 
